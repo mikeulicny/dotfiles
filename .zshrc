@@ -24,11 +24,7 @@ PROMPT=$'\U250c\U2500\U2500(%n@%M)-[%~] %t\n\U2514\U2500%{\e[0;31m%}\U3009%{\e[0
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS='--reverse --height 40% --border --preview "bat --color=always --style=numbers {}"' 
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
-
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source <(fzf --zsh)
 
 export PATH="$HOME/.local/bin:$PATH"
 
