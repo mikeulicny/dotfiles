@@ -26,10 +26,9 @@ vim.opt.wrap = false
 vim.opt.fillchars:append { diff = "/" }
 
 -- Tab Configurations
-vim.opt.smarttab = true
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+vim.opt.tabstop = 4         -- Insert 4 spaces for tabs
+vim.opt.shiftwidth = 4      -- Number of space characters inserted for indentation
+vim.opt.expandtab = true    -- convert tabs to spaces
 
 -- Window splitting
 vim.opt.splitright = true
