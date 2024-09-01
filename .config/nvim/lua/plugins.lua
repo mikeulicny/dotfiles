@@ -11,6 +11,7 @@ return require('packer').startup(function(use)
     -- Auto bracket pairs
     use {
         "windwp/nvim-autopairs",
+        event = "InsertEnter",
         config = function() require("nvim-autopairs").setup {} end
     }
 
