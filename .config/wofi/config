@@ -1,0 +1,7 @@
+width = 30%
+height = 30%
+allow_images = true
+image_size = 25
+insensitive = true
+prompt=Search
+hide_scroll = true
