@@ -19,14 +19,12 @@ vim.opt.rtp:prepend(lazypath)
 vim.opt.swapfile = false
 
 -- Visual 
-vim.cmd.colorscheme "catppuccin-mocha"
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.scrolloff = 3 
 vim.opt.wrap = false
 vim.opt.fillchars:append { diff = "/" }
-vim.opt.signcolumn = 'yes'  -- avoid annoying layout shift
 
 -- Tab Configurations
 vim.opt.tabstop = 4         -- Insert 4 spaces for tabs
@@ -66,96 +64,15 @@ vim.keymap.set('n', '<leader>Y', "\"+Y")
 vim.keymap.set('n', 'Q', '<nop>')
 -- Show diagnostics
 vim.keymap.set('n', '<leader>e', function()
-    vim.diagnostic.open_float()
+  vim.diagnostic.open_float()
 end, { noremap = true, silent = true })
 
 -- File types
 vim.filetype.add({
-    extension = {
-        templ = "templ",
-    },
+  extension = {
+    templ = "templ",
+  },
 })
 
--- Setup lazy.nvim
-require("lazy").setup({
-    spec = {
-        -- Better syntax highlighting
-        { 'nvim-treesitter/nvim-treesitter',
-            build = ":TSUpdate",
-            config = function()
-                local configs = require('nvim-treesitter.configs')
-                configs.setup({
-                    ensure_installed = { "vimdoc", "javascript", "typescript", "c", "lua", "rust", "go"},
-                    sync_install = false,
-                    auto_install = true,
-                    highlight = { enable = true },
-                    indent = { enable = true },
-                })
-            end
-        },
-
-        -- Coloscheme
-        { 'catppuccin/nvim',
-            name = 'catppuccin',
-            priority = 1000 },
-
-        -- File explorer
-        { 'stevearc/oil.nvim',
-            opts = {},
-            keys = {
-                {"-", "<CMD>Oil --float<CR>", desc = "Open parent directory" }
-            },
-            dependencies = {
-                'nvim-tree/nvim-web-devicons'
-            }},
-
-        -- Auto bracket pairs
-        { 'windwp/nvim-autopairs',
-            event = 'InsertEnter',
-            config = true },
-
-        -- Nicer status line
-        { 'nvim-lualine/lualine.nvim',
-            dependencies = {
-                'nvim-tree/nvim-web-devicons'
-            }},
-
-        -- fzf lua fuzzy finder
-        { 'ibhagwan/fzf-lua',
-            dependencies = {
-                'nvim-tree/nvim-web-devicons'
-            },
-            opts = {
-                winopts = {
-                    height = .3,
-                    width = 1,
-                    row = 1,
-                },
-            },
-            keys = {
-                {'<leader>p', function() require('fzf-lua').files() end, silent = true},
-            }},
-
-        -- LSP and autocomplete
-        { 'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'},
-        { 'neovim/nvim-lspconfig' },
-        { 'hrsh7th/cmp-nvim-lsp' },
-        { 'hrsh7th/nvim-cmp' },
-        { 'williamboman/mason.nvim', config = true },
-        { 'williamboman/mason-lspconfig.nvim',
-            opts = {
-                ensure_installed = { 'lua_ls', 'rust_analyzer', 'clangd', 'gopls', 'sqls', 'zls' },
-                handlers = {
-                    function(server_name)
-                        require('lspconfig')[server_name].setup({})
-                    end,
-                }
-            },
-    	},
-
-    },
-    -- Configure any other settings here.
-
-    -- automatically check for plugin updates
-    checker = { enabled = true }
-})
+-- Source lazy.nvim plugin files
+require("lazy").setup('plugins')
