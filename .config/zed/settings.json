@@ -18,12 +18,5 @@
   "vim_mode": true,
   "terminal": {
     "line_height": "standard"
-  },
-  "languages": {
-    "Svelte": {
-      "tab_size": 2
-    }
   }
-
-
 }
