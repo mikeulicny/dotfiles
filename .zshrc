@@ -51,3 +51,5 @@ export PATH="$HOME/go/bin:$PATH"
 
 # Dotfiles config git alias
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+[ -f "/home/mike/.ghcup/env" ] && . "/home/mike/.ghcup/env" # ghcup-env
