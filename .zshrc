@@ -46,9 +46,13 @@ export PATH="$PNPM_HOME:$PATH"
 # Golang
 export PATH="$HOME/go/bin:$PATH"
 
-# Laravel (only on MacOS)
+# Laravel
 if [[ "$(uname)" == "Darwin" ]]; then
+    # MacOS
     export PATH="$HOME/.composer/vendor/bin:$PATH"
+else
+    # Linux
+    export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 fi
 
 # bun completions
