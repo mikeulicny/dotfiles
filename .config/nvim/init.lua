@@ -72,6 +72,9 @@ vim.filetype.add({
   extension = {
     templ = "templ",
   },
+  pattern = {
+    [".*%.blade%.php"] = "php",
+  }
 })
 
 -- Source lazy.nvim plugin files
