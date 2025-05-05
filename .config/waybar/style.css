@@ -9,17 +9,21 @@ window#waybar {
   margin: 8px 0 8px 8px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 0.5rem;
-  color: rgba(255,255,255,0.8);
   background-color: rgba(0, 0, 0, 0.4);
 }
 
 #workspaces button {
   padding: 0rem 0.5rem;
   border: none;
+  color: rgba(255,255,255,0.33)
 }
 
-#workspaces button.focused {
-  background-color: rgba(0, 0, 0, 0.1);
+#workspaces button.active {
+  color: rgba(255,255,255,1);
+}
+
+#workspaces button:hover {
+  color: black;
 }
 
 .modules-center {
@@ -32,7 +36,7 @@ window#waybar {
 }
 
 .modules-right {
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   margin: 8px 8px 8px 0;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 0.5rem;
