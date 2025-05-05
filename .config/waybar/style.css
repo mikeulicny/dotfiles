@@ -1,0 +1,41 @@
+window#waybar {
+  font-family: system-ui;
+  font-size: 1.2rem;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#workspaces {
+  padding: 0;
+  margin: 8px 0 8px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.5rem;
+  color: rgba(255,255,255,0.8);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#workspaces button {
+  padding: 0rem 0.5rem;
+  border: none;
+}
+
+#workspaces button.focused {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.modules-center {
+  padding: 0.5rem 1rem;
+  margin: 8px 0 8px 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.5rem;
+  color: rgba(255,255,255,0.8);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modules-right {
+  padding: 0.5rem;
+  margin: 8px 8px 8px 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.5rem;
+  color: rgba(255,255,255,0.8);
+  background-color: rgba(0,0,0,0.4);
+}
