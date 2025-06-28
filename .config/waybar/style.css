@@ -1,8 +1,14 @@
-window#waybar {
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+}
+
+#waybar {
   font-family: system-ui;
   font-size: 1.2rem;
   color: rgba(255,255,255,0.8);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 #workspaces {
@@ -12,18 +18,24 @@ window#waybar {
 
 #workspaces button {
   padding: 0.25rem 0.75rem;
-  margin: 0.1rem;
+  margin-right: 0.25rem;
   border-radius: 0.5rem;
-  color: rgba(255,255,255,0.33)
+  color: rgba(255,255,255,0.6);
 }
 
 #workspaces button.active {
-  color: rgba(255,255,255,1);
-  background-color: rgba(255,255,255,0.15);
+  color: white;
+  background-color: rgba(255, 255, 255, 0.33);
 }
 
 #workspaces button:hover {
   color: black;
+  background-color: transparent;
+}
+
+#cpu, #battery, #network, #bluetooth, #pulseaudio, #clock {
+  min-width: 2rem;
+  margin-right: 0.25rem;
 }
 
 .modules-center {
@@ -31,5 +43,12 @@ window#waybar {
 }
 
 .modules-right {
-  padding: 0.25rem 0.75rem;
+  padding: 0.25rem 0rem;
+}
+
+tooltip {
+  padding: 0.25rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.5rem;
 }
