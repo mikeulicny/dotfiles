@@ -19,7 +19,6 @@ PROMPT=$'\U250c\U2500\U2500(%n@%M)-[%~] %t\n\U2514\U2500%{\e[0;31m%}\U3009%{\e[0
 # fzf autocomplete settings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
 # use ripgrep by default for faster searching
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -45,6 +44,9 @@ export PATH="$PNPM_HOME:$PATH"
 
 # Golang
 export PATH="$HOME/go/bin:$PATH"
+
+# elixir
+export PATH="/usr/bin:$PATH"
 
 # Laravel
 if [[ "$(uname)" == "Darwin" ]]; then

@@ -1,6 +1,6 @@
 {
     "layer": "top",
-    "height": 32,
+    "height": 26,
     "reload_style_on_change": true,
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
@@ -35,7 +35,8 @@
         "format": "",
         "format-disabled": "󰂲",
         "format-connected": "",
-        "tooltip-format": "Devices connected: {num_connections}"
+        "tooltip-format": "Devices connected: {num_connections}",
+        "on-click": "blueberry"
       },
       "network": {
         "format": "{icon}",
