@@ -1,5 +1,5 @@
 import QtQuick
-import Quickshell
+import qs.Services
 
 Rectangle {
   id: root
@@ -31,9 +31,9 @@ Rectangle {
           let currentVolume = (AudioService.sink && AudioService.sink.audio && AudioService.sink.audio.volume * 100) || 0;
           let newVolume
           if (delta > 0)
-            newVolume = Math.min(100, currentVolume + 5);
+            newVolume = Math.min(100, currentVolume + 2);
           else
-            newVolume = Math.max(0, currentVolume - 5);
+            newVolume = Math.max(0, currentVolume - 2);
 
           if (AudioService.sink && AudioService.sink.audio) {
             AudioService.sink.audio.muted = false;
