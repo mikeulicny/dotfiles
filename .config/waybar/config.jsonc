@@ -24,8 +24,7 @@
         "6": "6",
         "7": "7",
         "8": "8",
-        "9": "9",
-        "active": ""
+        "9": "9"
       },
       "persistent-workspaces": {
           "1": [],
@@ -76,10 +75,8 @@
         "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}"
       },
       "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-icons": {
-          "default": [""]
-        },
+        "format": "󰓃 {volume}%",
+        "justify": "left",
         "format-muted": "",
         "scroll-step": 5
       }
