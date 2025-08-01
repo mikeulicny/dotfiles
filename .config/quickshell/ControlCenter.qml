@@ -4,39 +4,88 @@ import qs.Services
 Rectangle {
   id: root
   height: 30
-  width: 300
+  width: 100
+  color: "transparent"
+
+  function getWifiSignalIcon(signalStrength) {
+    switch (signalStrength) {
+      case "great":
+        return "wifi";
+      case "good":
+        return "wifi_2_bar";
+      case "fair":
+        return "wifi_1_bar";
+      case "poor":
+        return "wifi_0_bar";
+      default:
+        return "wifi";
+    }
+  }
 
   Row {
     // Network/Wifi
+    Rectangle {
+      width: 30
+      height: 30
+      color: "transparent"
+      anchors.verticalCenter: parent.verticalCenter
+
+      Text {
+        text: "lan"
+        color: "white"
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.horizontalCenter: parent.horizontalCenter
+        font.pointSize: 16 
+        font.family: "Material Symbols Rounded"
+      }
+    }
 
     // Bluetooth
     Rectangle {
       //name: "bluetooth"
       width: 30
       height: 30
-      color: "blue"
+      color: "transparent"
       anchors.verticalCenter: parent.verticalCenter
-      visible: BluetoothService.available && BluetoothService.enabled
+
+      Text {
+        text: "󰂯"
+        color: "white"
+        font.pointSize: 16
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.horizontalCenter: parent.horizontalCenter
+        visible: BluetoothService.available && BluetoothService.enabled
+      }
+
+      Text {
+        text: "󰂲"
+        color: "white"
+        font.pointSize: 16
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.horizontalCenter: parent.horizontalCenter
+        visible: !BluetoothService.enabled
+      }
     }
 
     // Volume/Audio
     Rectangle {
-      //width: audioIcon.implicitWidth + 4
-      width: 100
-      //height: audioIcon.implicitHeight + 4
+      width: 30
       height: 30
-      color: "black"
+      color: "transparent"
       anchors.verticalCenter: parent.verticalCenter
 
       Text {
         text: "󰓃"
         color: "white"
-        font.pointSize: 22 
+        font.pointSize: 16
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenter: parent.horizontalCenter
       }
 
       MouseArea {
+        // scroll up = volume up
+        // scroll down = volume down
+
         id: audioWheelArea
 
         anchors.fill: parent
