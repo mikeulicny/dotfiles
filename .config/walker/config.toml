@@ -1,15 +1,15 @@
 app_launch_prefix = ""
 terminal_title_flag = ""
 locale = ""
-close_when_open = false
-theme = "default"
+close_when_open = true
+theme = "ima"
 monitor = ""
 hotreload_theme = false
 as_window = false
 timeout = 0
 disable_click_to_close = false
-force_keyboard_focus = false
-theme_location = []
+force_keyboard_focus = true
+theme_location = ["~/.config/walker/themes/"]
 plugin_location = []
 js_runtime = "node"
 
@@ -43,7 +43,7 @@ on_query_change = ""
 [list]
 dynamic_sub = true
 keyboard_scroll_style = "emacs"
-max_entries = 50
+max_entries = 200
 show_initial_entries = true
 single_click = true
 visibility_threshold = 20
@@ -60,28 +60,31 @@ labels = "jkl;asdf"
 
 [builtins.hyprland_keybinds]
 show_sub_when_single = true
+path = "~/.config/hypr/hyprland.conf"
 weight = 5
 name = "hyprland_keybinds"
 placeholder = "Hyprland Keybinds"
 switcher_only = true
+hidden = true
 
 [builtins.applications]
 weight = 5
 name = "applications"
 placeholder = "Applications"
-prioritize_new = true
+prioritize_new = false
 hide_actions_with_empty_query = true
-context_aware = true
+context_aware = false
 refresh = true
-show_sub_when_single = true
+show_sub_when_single = false
 show_icon_when_single = true
 show_generic = true
-history = true
-icon = "applications-other"
+history = false
+icon = ""
+hidden = true
 
 [builtins.applications.actions]
-enabled = true
-hide_category = false
+enabled = false
+hide_category = true
 hide_without_query = true
 
 [builtins.bookmarks]
@@ -90,6 +93,7 @@ placeholder = "Bookmarks"
 name = "bookmarks"
 icon = "bookmark"
 switcher_only = true
+hidden = true
 
 [[builtins.bookmarks.entries]]
 label = "Walker"
