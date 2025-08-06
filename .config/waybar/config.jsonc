@@ -69,7 +69,7 @@
       "network": {
         "format": "{icon}",
         "format-wifi": "",
-        "format-ethernet" : "",
+        "format-ethernet" : " ",
         "format-disconnected" : "󰖪",
         "tooltip-format-disconnected": "No Connection",
         "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
