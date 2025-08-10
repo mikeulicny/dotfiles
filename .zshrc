@@ -62,5 +62,7 @@ fi
 
 # Dotfiles config git alias
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+# Aliases
+alias ls='ls --color'
 
 [ -f "/home/mike/.ghcup/env" ] && . "/home/mike/.ghcup/env" # ghcup-env
