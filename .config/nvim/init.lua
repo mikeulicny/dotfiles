@@ -7,7 +7,6 @@ vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.scrolloff = 3
 vim.opt.wrap = false
-vim.opt.fillchars:append { diff = "/" }
 vim.opt.winborder = "rounded"
 vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
@@ -16,6 +15,7 @@ vim.opt.termguicolors = true
 vim.opt.tabstop = 4      -- Insert 4 spaces for tabs
 vim.opt.shiftwidth = 4   -- Number of space characters inserted for indentation
 vim.opt.expandtab = true -- convert tabs to spaces
+vim.opt.
 
 -- Window splitting
 vim.opt.splitright = true
@@ -67,16 +67,16 @@ require "oil".setup({
     show_hidden = true,
     float = { max_width = 150, max_height = 40 },
 })
+require "nvim-treesitter.configs".setup({
+    auto_install = true,
+    highlight = { enable = true },
+})
 
 -- Package specific keymaps
 vim.keymap.set('n', "-", "<CMD>Oil --float<CR>")
 vim.keymap.set('n', '<leader>f', vim.lsp.buf.format)
 
 vim.lsp.enable({ "lua_ls" })
-require 'nvim-treesitter.configs'.setup({
-    auto_install = true,
-    highlight = { enable = true },
-})
 vim.lsp.config("lua_ls", {
     settings = {
         Lua = {
