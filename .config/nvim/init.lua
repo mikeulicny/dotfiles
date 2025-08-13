@@ -15,7 +15,6 @@ vim.opt.termguicolors = true
 vim.opt.tabstop = 4      -- Insert 4 spaces for tabs
 vim.opt.shiftwidth = 4   -- Number of space characters inserted for indentation
 vim.opt.expandtab = true -- convert tabs to spaces
-vim.opt.
 
 -- Window splitting
 vim.opt.splitright = true
@@ -54,7 +53,7 @@ end, { noremap = true, silent = true })
 
 -- Packages
 vim.pack.add({
-    { src = "https://github.com/jwbaldwin/oscura.nvim" },
+    { src = "https://github.com/webhooked/oscura.nvim" },
     { src = "https://github.com/stevearc/oil.nvim" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
@@ -89,5 +88,5 @@ vim.lsp.config("lua_ls", {
 
 
 -- Colorscheme
+require "oscura".setup({})
 vim.cmd.colorscheme "oscura"
-require "oscura".setup()
