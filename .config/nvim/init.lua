@@ -66,7 +66,7 @@ require "oil".setup({
     show_hidden = true,
     float = { max_width = 150, max_height = 40 },
 })
-require "nvim-treesitter".install({ 'lua', 'ruby', 'go', 'zig' })
+require("nvim-treesitter").install({ 'elixir', 'lua', 'ruby', 'go', 'zig' }):wait(500)
 
 -- Package specific keymaps
 vim.keymap.set('n', "-", "<CMD>Oil --float<CR>")
