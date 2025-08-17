@@ -66,10 +66,7 @@ require "oil".setup({
     show_hidden = true,
     float = { max_width = 150, max_height = 40 },
 })
-require "nvim-treesitter.configs".setup({
-    auto_install = true,
-    highlight = { enable = true },
-})
+require "nvim-treesitter".install({ 'lua', 'ruby', 'go', 'zig' })
 
 -- Package specific keymaps
 vim.keymap.set('n', "-", "<CMD>Oil --float<CR>")
@@ -86,6 +83,11 @@ vim.lsp.config("lua_ls", {
     }
 })
 
+-- Treesitter highlighting
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = { '<filetype>' },
+    callback = function() vim.treesitter.start() end,
+})
 
 -- Colorscheme
 require "oscura".setup({})
