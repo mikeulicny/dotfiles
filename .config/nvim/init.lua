@@ -58,6 +58,7 @@ vim.pack.add({
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
     { src = "https://github.com/mason-org/mason.nvim" },
+    { src = "https://github.com/akinsho/bufferline.nvim" },
 })
 
 require "mason".setup()
@@ -66,11 +67,20 @@ require "oil".setup({
     show_hidden = true,
     float = { max_width = 150, max_height = 40 },
 })
-require("nvim-treesitter").install({ 'elixir', 'lua', 'ruby', 'go', 'zig' }):wait(500)
+require("nvim-treesitter").install({ 'c', 'elixir', 'lua', 'ruby', 'go', 'zig' }):wait(500)
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = { 'c', 'elixir', 'lua', 'ruby', 'go', 'zig' },
+    callback = function()
+        vim.treesitter.start()
+    end,
+})
+require "bufferline".setup()
 
 -- Package specific keymaps
 vim.keymap.set('n', "-", "<CMD>Oil --float<CR>")
 vim.keymap.set('n', '<leader>f', vim.lsp.buf.format)
+vim.keymap.set('n', '<S-l>', '<CMD>bn<CR>')
+vim.keymap.set('n', '<S-h>', '<CMD>bp<CR>')
 
 vim.lsp.enable({ "lua_ls" })
 vim.lsp.config("lua_ls", {
