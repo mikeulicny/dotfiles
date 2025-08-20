@@ -81,20 +81,12 @@ require "fzf-lua".setup({'default'})
 -- Package specific keymaps
 vim.keymap.set('n', "-", "<CMD>Oil --float<CR>")
 vim.keymap.set('n', '<leader>f', vim.lsp.buf.format)
-    vim.keymap.set('n', '<C-p>', '<CMD>FzfLua files<CR>', { silent=true })
+vim.keymap.set('n', '<C-p>', '<CMD>FzfLua files<CR>', { silent=true })
 vim.keymap.set('n', '<S-l>', '<CMD>bn<CR>')
 vim.keymap.set('n', '<S-h>', '<CMD>bp<CR>')
 
 vim.lsp.enable({ "lua_ls" })
-vim.lsp.config("lua_ls", {
-    settings = {
-        Lua = {
-            workspace = {
-                library = vim.api.nvim_get_runtime_file("", true),
-            }
-        }
-    }
-})
+vim.lsp.config("lua_ls", { settings = { Lua = { workspace = { library = vim.api.nvim_get_runtime_file("", true), } } } })
 
 -- Treesitter highlighting
 vim.api.nvim_create_autocmd('FileType', {
