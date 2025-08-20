@@ -59,6 +59,7 @@ vim.pack.add({
     { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
     { src = "https://github.com/mason-org/mason.nvim" },
     { src = "https://github.com/akinsho/bufferline.nvim" },
+    { src = "https://github.com/ibhagwan/fzf-lua" },
 })
 
 require "mason".setup()
@@ -75,10 +76,12 @@ vim.api.nvim_create_autocmd('FileType', {
     end,
 })
 require "bufferline".setup()
+require "fzf-lua".setup({'default'})
 
 -- Package specific keymaps
 vim.keymap.set('n', "-", "<CMD>Oil --float<CR>")
 vim.keymap.set('n', '<leader>f', vim.lsp.buf.format)
+    vim.keymap.set('n', '<C-p>', '<CMD>FzfLua files<CR>', { silent=true })
 vim.keymap.set('n', '<S-l>', '<CMD>bn<CR>')
 vim.keymap.set('n', '<S-h>', '<CMD>bp<CR>')
 
