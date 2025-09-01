@@ -68,7 +68,7 @@ require "oil".setup({
     show_hidden = true,
     float = { max_width = 150, max_height = 40 },
 })
-require("nvim-treesitter").install({ 'c', 'elixir', 'lua', 'ruby', 'go', 'zig' }):wait(500)
+require("nvim-treesitter").install({ 'c', 'eelixir', 'elixir', 'heex', 'lua', 'ruby', 'svelte', 'go', 'zig' }):wait(500)
 vim.api.nvim_create_autocmd('FileType', {
     pattern = { 'c', 'elixir', 'lua', 'ruby', 'go', 'zig' },
     callback = function()
@@ -85,12 +85,12 @@ vim.keymap.set('n', '<C-p>', '<CMD>FzfLua files<CR>', { silent=true })
 vim.keymap.set('n', '<S-l>', '<CMD>bn<CR>')
 vim.keymap.set('n', '<S-h>', '<CMD>bp<CR>')
 
-vim.lsp.enable({ "bashls", "clangd", "html", "htmx", "gopls", "lexical", "lua_ls", "tailwindcss" })
+vim.lsp.enable({ "bashls", "clangd", "html", "htmx", "gopls", "expert", "lua_ls", "svelte-language-server", "tailwindcss" })
 vim.lsp.config("lua_ls", { settings = { Lua = { workspace = { library = vim.api.nvim_get_runtime_file("", true), } } } })
 
 -- Treesitter highlighting
 vim.api.nvim_create_autocmd('FileType', {
-    pattern = { '<filetype>' },
+    pattern = { '*.c', '*.ex', '*.heex', '*.html', '*.css', '*.go', '*.lua', '*.svelte' },
     callback = function() vim.treesitter.start() end,
 })
 
