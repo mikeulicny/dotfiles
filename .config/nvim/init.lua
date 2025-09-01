@@ -90,8 +90,17 @@ vim.lsp.config("lua_ls", { settings = { Lua = { workspace = { library = vim.api.
 
 -- Treesitter highlighting
 vim.api.nvim_create_autocmd('FileType', {
-    pattern = { '*.c', '*.ex', '*.heex', '*.html', '*.css', '*.go', '*.lua', '*.svelte' },
+    pattern = { 'c', 'ex', 'heex', 'html', 'css', 'go', 'lua', 'svelte' },
     callback = function() vim.treesitter.start() end,
+})
+
+-- 2 space indents in html style filetypes
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = { 'css', 'html', 'svelte' },
+    callback = function()
+        vim.opt_local.tabstop = 2
+        vim.opt_local.shiftwidth = 2
+    end,
 })
 
 -- Colorscheme
