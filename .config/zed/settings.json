@@ -12,13 +12,18 @@
   "ui_font_size": 20,
   "buffer_font_family": "Berkeley Mono",
   "buffer_line_height": "standard",
-  "buffer_font_size": 20.0,
-  "format_on_save": "off",
+  "buffer_font_size": 20,
+  "format_on_save": "on",
   "soft_wrap": "none",
   "vim_mode": true,
-  "tab_size": 2,
   "terminal": {
     "line_height": "standard"
   },
-  "show_edit_predictions": false
+  "show_edit_predictions": false,
+  "show_completions_on_input": false,
+  // vim mode edits
+  "cursor_blink": false,
+  "relative_line_numbers": true,
+  "scrollbar": { "show": "never" },
+  "scroll_beyond_last_line": "off"
 }
