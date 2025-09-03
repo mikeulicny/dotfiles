@@ -40,6 +40,8 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('x', '<leader>p', "\"_dP")
 vim.keymap.set('n', '<leader>d', "\"_d")
 vim.keymap.set('v', '<leader>d', "\"_d")
+-- Better buffer delete
+vim.keymap.set('n', '<leader>q', ":bp<bar>sp<bar>bn<bar>bd<CR>")
 -- Neovim yank and System Clipboard yank
 vim.keymap.set('n', '<leader>y', "\"+y")
 vim.keymap.set('v', '<leader>y', "\"+y")
