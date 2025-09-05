@@ -101,7 +101,7 @@ vim.api.nvim_create_autocmd('FileType', {
 
 -- 2 space indents in html style filetypes
 vim.api.nvim_create_autocmd('FileType', {
-    pattern = { 'css', 'html', 'svelte' },
+    pattern = { 'css', 'html', 'svelte', 'ex', 'heex' },
     callback = function()
         vim.opt_local.tabstop = 2
         vim.opt_local.shiftwidth = 2
