@@ -20,6 +20,9 @@ vim.opt.expandtab = true -- convert tabs to spaces
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+-- Nicer autocomplete
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
+
 -- Custom Keymaps
 vim.g.mapleader = ' '
 vim.keymap.set('n', '<C-h>', '<C-w>h')
