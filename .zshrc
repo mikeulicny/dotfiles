@@ -60,6 +60,10 @@ else
     export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 fi
 
+# ruby on rails
+export GEM_HOME="$(gem env user_gemhome)"
+export PATH="$PATH:$GEM_HOME/bin"
+
 # bun completions
 [ -s "/home/mike/.bun/_bun" ] && source "/home/mike/.bun/_bun"
 
