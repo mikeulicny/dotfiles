@@ -15,8 +15,8 @@ try_suppress_warnings = false
 app_paths = []
 
 [appearance]
-width = 1000
-height = 593
+width = 1200
+height = 800
 gsk_renderer = "cairo"
 icon_paths = ["testconfig/icons"]
 icon_size = 60
@@ -38,9 +38,9 @@ modifier = "control"
 exec_inplace = "control-return"
 
 [files]
-config = "/home/user/.config/sherlock/config.toml"
-css = "/home/user/.config/sherlock/main.css"
-fallback = "/home/user/.config/sherlock/fallback.json"
+config = "/home/mike/.config/sherlock/config.toml"
+css = "/home/mike/.config/sherlock/main.css"
+fallback = "/home/mike/.config/sherlock/fallback.json"
 alias = "/home/user/.config/sherlock/sherlock_alias.json"
 ignore = "/home/user/.config/sherlock/sherlockignore"
 actions = "/home/user/.config/sherlock/sherlock_actions.json"
