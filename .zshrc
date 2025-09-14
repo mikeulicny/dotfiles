@@ -61,8 +61,10 @@ else
 fi
 
 # ruby on rails
-export GEM_HOME="$(gem env user_gemhome)"
-export PATH="$PATH:$GEM_HOME/bin"
+if [[ !"$(uname)" == "Darwin" ]]; then
+    export GEM_HOME="$(gem env user_gemhome)"
+    export PATH="$PATH:$GEM_HOME/bin"
+fi
 
 # bun completions
 [ -s "/home/mike/.bun/_bun" ] && source "/home/mike/.bun/_bun"
