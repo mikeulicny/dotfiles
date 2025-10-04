@@ -10,6 +10,7 @@ vim.opt.wrap = false
 vim.opt.winborder = "rounded"
 vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
+vim.opt.mousescroll = "ver:1,hor:6"
 
 -- Tab Configurations
 vim.opt.tabstop = 4      -- Insert 4 spaces for tabs
