@@ -35,6 +35,9 @@ else
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
+# Completions for jj
+source <(COMPLETE=zsh jj)
+
 export PATH="$HOME/.local/bin:$PATH"
 
 # editor
@@ -61,7 +64,9 @@ else
 fi
 
 # ruby on rails
-if [[ !"$(uname)" == "Darwin" ]]; then
+if [[ "$(uname)" == "Darwin" ]]; then
+    eval "$(~/.local/bin/mise activate)"
+else
     export GEM_HOME="$(gem env user_gemhome)"
     export PATH="$PATH:$GEM_HOME/bin"
 fi
