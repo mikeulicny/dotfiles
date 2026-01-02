@@ -60,6 +60,7 @@ end, { noremap = true, silent = true })
 -- Packages
 vim.pack.add({
     { src = "https://github.com/webhooked/oscura.nvim" },
+    { src = "https://github.com/catppuccin/nvim" },
     { src = "https://github.com/stevearc/oil.nvim" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
@@ -74,9 +75,9 @@ require "oil".setup({
     show_hidden = true,
     float = { max_width = 150, max_height = 40 },
 })
-require("nvim-treesitter").install({ 'c', 'eelixir', 'elixir', 'heex', 'lua', 'ruby', 'svelte', 'go', 'zig' }):wait(500)
+require("nvim-treesitter").install({ 'c', 'eelixir', 'elixir', 'heex', 'lua', 'ocaml', 'ruby', 'svelte', 'go', 'zig' }):wait(500)
 vim.api.nvim_create_autocmd('FileType', {
-    pattern = { 'c', 'elixir', 'lua', 'ruby', 'go', 'zig' },
+    pattern = { 'c', 'elixir', 'lua', 'ocaml', 'ruby', 'go', 'zig' },
     callback = function()
         vim.treesitter.start()
     end,
@@ -91,7 +92,7 @@ vim.keymap.set('n', '<C-p>', '<CMD>FzfLua files<CR>', { silent=true })
 vim.keymap.set('n', '<S-l>', '<CMD>bn<CR>')
 vim.keymap.set('n', '<S-h>', '<CMD>bp<CR>')
 
-vim.lsp.enable({ "bashls", "clangd", "html", "htmx", "gopls", "expert", "lua_ls", "svelte-language-server", "tailwindcss" })
+vim.lsp.enable({ "bashls", "clangd", "html", "htmx", "gopls", "expert", "lua_ls", "ocaml-lsp-server", "svelte-language-server", "tailwindcss" })
 vim.lsp.config("lua_ls", { settings = { Lua = { workspace = { library = vim.api.nvim_get_runtime_file("", true), } } } })
 
 -- Treesitter highlighting
@@ -110,5 +111,5 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 -- Colorscheme
-require "oscura".setup({})
-vim.cmd.colorscheme "oscura"
+-- require "oscura".setup({})
+vim.cmd.colorscheme "catppuccin-mocha"
