@@ -35,9 +35,6 @@ else
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
-# Completions for jj
-source <(COMPLETE=zsh jj)
-
 export PATH="$HOME/.local/bin:$PATH"
 
 # editor

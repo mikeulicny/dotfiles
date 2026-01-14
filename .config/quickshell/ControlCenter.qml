@@ -31,7 +31,7 @@ Rectangle {
       anchors.verticalCenter: parent.verticalCenter
 
       Text {
-        text: "lan"
+        text: " "
         color: "white"
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenter: parent.horizontalCenter
