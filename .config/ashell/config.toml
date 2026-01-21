@@ -1,0 +1,25 @@
+[modules]
+left = [ "Workspaces" ]
+center = [ "Clock" ]
+right = ["Tray", "MediaPlayer", "SystemInfo", "Privacy", "Settings"]
+
+[workspaces]
+enable_workspace_filling = true
+max_workspaces = 5
+
+[clock]
+format = "%B %d %R"
+
+[media_player]
+max_title_length = 50
+
+[settings]
+indicators = ["Audio", "Bluetooth", "Network"]
+lock_cmd = "hyprlock &"
+
+[appearance]
+scale_factor = 1.4 
+style = "Solid"
+opacity = 0.8
+
+[appearance.menu]
