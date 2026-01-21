@@ -7,7 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "Oscura",
+  "theme": "Ayu Dark",
   "ui_font_family": "Berkeley Mono",
   "ui_font_size": 20,
   "buffer_font_family": "Berkeley Mono",
