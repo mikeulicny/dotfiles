@@ -75,7 +75,7 @@ require "oil".setup({
     show_hidden = true,
     float = { max_width = 150, max_height = 40 },
 })
-require("nvim-treesitter").install({ 'c', 'eelixir', 'elixir', 'heex', 'lua', 'ocaml', 'ruby', 'svelte', 'go', 'zig' }):wait(500)
+require("nvim-treesitter").install({ 'c', 'eelixir', 'elixir', 'heex', 'lua', 'ocaml', 'ruby', 'rust', 'svelte', 'go', 'zig' }):wait(500)
 require "bufferline".setup()
 require "fzf-lua".setup({'default'})
 
