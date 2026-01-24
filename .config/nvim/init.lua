@@ -92,12 +92,12 @@ vim.keymap.set('n', '<C-p>', '<CMD>FzfLua files<CR>', { silent=true })
 vim.keymap.set('n', '<S-l>', '<CMD>bn<CR>')
 vim.keymap.set('n', '<S-h>', '<CMD>bp<CR>')
 
-vim.lsp.enable({ "bashls", "clangd", "html", "htmx", "gopls", "expert", "lua_ls", "ocaml-lsp-server", "svelte-language-server", "tailwindcss" })
+vim.lsp.enable({ "bashls", "clangd", "html", "htmx", "gopls", "expert", "lua_ls", "ocaml-lsp-server", "rust_analyzer", "svelte-language-server", "tailwindcss" })
 vim.lsp.config("lua_ls", { settings = { Lua = { workspace = { library = vim.api.nvim_get_runtime_file("", true), } } } })
 
 -- Treesitter highlighting
 vim.api.nvim_create_autocmd('FileType', {
-    pattern = { 'c', 'ex', 'heex', 'html', 'css', 'go', 'lua', 'svelte' },
+    pattern = { 'c', 'ex', 'heex', 'html', 'css', 'go', 'lua', 'rust', 'svelte' },
     callback = function() vim.treesitter.start() end,
 })
 
