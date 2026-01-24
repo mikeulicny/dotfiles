@@ -76,12 +76,6 @@ require "oil".setup({
     float = { max_width = 150, max_height = 40 },
 })
 require("nvim-treesitter").install({ 'c', 'eelixir', 'elixir', 'heex', 'lua', 'ocaml', 'ruby', 'svelte', 'go', 'zig' }):wait(500)
-vim.api.nvim_create_autocmd('FileType', {
-    pattern = { 'c', 'elixir', 'lua', 'ocaml', 'ruby', 'go', 'zig' },
-    callback = function()
-        vim.treesitter.start()
-    end,
-})
 require "bufferline".setup()
 require "fzf-lua".setup({'default'})
 
@@ -97,7 +91,7 @@ vim.lsp.config("lua_ls", { settings = { Lua = { workspace = { library = vim.api.
 
 -- Treesitter highlighting
 vim.api.nvim_create_autocmd('FileType', {
-    pattern = { 'c', 'ex', 'heex', 'html', 'css', 'go', 'lua', 'rust', 'svelte' },
+    pattern = { 'c', 'ex', 'heex', 'html', 'css', 'go', 'lua', 'ocaml', 'ruby', 'rust', 'svelte', 'zig' },
     callback = function() vim.treesitter.start() end,
 })
 
