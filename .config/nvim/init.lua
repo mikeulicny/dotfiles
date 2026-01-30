@@ -59,8 +59,11 @@ end, { noremap = true, silent = true })
 
 -- Packages
 vim.pack.add({
+    -- Themes
     { src = "https://github.com/webhooked/oscura.nvim" },
     { src = "https://github.com/catppuccin/nvim" },
+    { src = "https://github.com/datsfilipe/vesper.nvim" },
+    -- Utils
     { src = "https://github.com/stevearc/oil.nvim" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
@@ -75,8 +78,7 @@ require "oil".setup({
     show_hidden = true,
     float = { max_width = 150, max_height = 40 },
 })
-require("nvim-treesitter").install({ 'c', 'eelixir', 'elixir', 'heex', 'lua', 'ocaml', 'ruby', 'rust', 'svelte', 'go', 'zig' }):wait(500)
-require "bufferline".setup()
+require("nvim-treesitter").install({ 'c', 'elixir', 'heex', 'lua', 'ocaml', 'ruby', 'rust', 'svelte', 'go', 'zig' }):wait(500)
 require "fzf-lua".setup({'default'})
 
 -- Package specific keymaps
@@ -86,18 +88,18 @@ vim.keymap.set('n', '<C-p>', '<CMD>FzfLua files<CR>', { silent=true })
 vim.keymap.set('n', '<S-l>', '<CMD>bn<CR>')
 vim.keymap.set('n', '<S-h>', '<CMD>bp<CR>')
 
-vim.lsp.enable({ "bashls", "clangd", "html", "htmx", "gopls", "expert", "lua_ls", "ocaml-lsp-server", "rust_analyzer", "svelte-language-server", "tailwindcss" })
+vim.lsp.enable({ "bashls", "clangd", "html", "htmx", "gopls", "expert", "lua_ls", "ocaml-lsp-server", "rust_analyzer" })
 vim.lsp.config("lua_ls", { settings = { Lua = { workspace = { library = vim.api.nvim_get_runtime_file("", true), } } } })
 
 -- Treesitter highlighting
 vim.api.nvim_create_autocmd('FileType', {
-    pattern = { 'c', 'ex', 'heex', 'html', 'css', 'go', 'lua', 'ocaml', 'ruby', 'rust', 'svelte', 'zig' },
+    pattern = { 'c', 'ex', 'heex', 'html', 'css', 'go', 'lua', 'ocaml', 'ruby', 'rust', 'zig' },
     callback = function() vim.treesitter.start() end,
 })
 
 -- 2 space indents in html style filetypes
 vim.api.nvim_create_autocmd('FileType', {
-    pattern = { 'css', 'html', 'svelte', 'ex', 'heex' },
+    pattern = { 'css', 'html', 'ex', 'heex' },
     callback = function()
         vim.opt_local.tabstop = 2
         vim.opt_local.shiftwidth = 2
@@ -105,5 +107,16 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 -- Colorscheme
--- require "oscura".setup({})
-vim.cmd.colorscheme "catppuccin-mocha"
+require "oscura".setup({})
+require "vesper".setup({
+    italics = {
+        comments = true,
+        keywords = false,
+        functions = false,
+        strings = false,
+        variables = false,
+    }
+})
+vim.cmd.colorscheme "vesper"
+
+require "bufferline".setup({ highlights = require("vesper").bufferline.highlights })
