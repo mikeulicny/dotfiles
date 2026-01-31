@@ -40,11 +40,6 @@ export PATH="$HOME/.local/bin:$PATH"
 # editor
 export EDITOR=nvim
 
-# pnpm
-export PNPM_HOME="$HOME/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-
 # Golang
 export PATH="$HOME/go/bin:$PATH"
 
