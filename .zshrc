@@ -69,3 +69,6 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias ls='ls --color'
 
 [ -f "/home/mike/.ghcup/env" ] && . "/home/mike/.ghcup/env" # ghcup-env
+
+# opencode
+export PATH=/home/mike/.opencode/bin:$PATH
