@@ -78,7 +78,7 @@ require "oil".setup({
     show_hidden = true,
     float = { max_width = 150, max_height = 40 },
 })
-require("nvim-treesitter").install({ 'astro', 'c', 'elixir', 'eex', 'heex', 'java', 'lua', 'ocaml', 'ruby', 'rust', 'svelte', 'go', 'zig' }):wait(500)
+require("nvim-treesitter").install({ 'astro', 'c', 'elixir', 'eex', 'heex', 'javascript', 'typescript', 'lua', 'ocaml', 'ruby', 'rust', 'svelte', 'go', 'zig' }):wait(500)
 require "fzf-lua".setup({'default'})
 
 -- Package specific keymaps
@@ -93,13 +93,13 @@ vim.lsp.config("lua_ls", { settings = { Lua = { workspace = { library = vim.api.
 
 -- Treesitter highlighting
 vim.api.nvim_create_autocmd('FileType', {
-    pattern = { 'astro', 'c', 'elixir', 'eex', 'heex', 'html', 'css', 'go', 'java', 'lua', 'ocaml', 'ruby', 'rust', 'zig' },
+    pattern = { 'astro', 'c', 'elixir', 'eex', 'heex', 'html', 'css', 'go', 'js', 'ts', 'jsx', 'tsx', 'lua', 'ocaml', 'ruby', 'rust', 'zig' },
     callback = function() vim.treesitter.start() end,
 })
 
 -- 2 space indents in html style filetypes
 vim.api.nvim_create_autocmd('FileType', {
-    pattern = { 'astro', 'css', 'html', 'ex', 'heex' },
+    pattern = { 'astro', 'css', 'html', 'ex', 'heex', 'js', 'ts', 'jsx', 'typescriptreact' },
     callback = function()
         vim.opt_local.tabstop = 2
         vim.opt_local.shiftwidth = 2
@@ -117,5 +117,5 @@ require "vesper".setup({
         variables = false,
     }
 })
-vim.cmd.colorscheme "vesper"
 require "bufferline".setup({ highlights = require("vesper").bufferline.highlights })
+vim.cmd.colorscheme "oscura"
