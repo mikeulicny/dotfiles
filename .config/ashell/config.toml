@@ -1,14 +1,15 @@
 [modules]
 left = [ "Workspaces" ]
-center = [ "Clock" ]
+center = [ "Tempo" ]
 right = ["Tray", "MediaPlayer", "SystemInfo", "Privacy", "Settings"]
 
 [workspaces]
 enable_workspace_filling = true
 max_workspaces = 5
 
-[clock]
-format = "%B %d %R"
+[tempo]
+clock_format = "%B %d %R"
+weather_location = { City = "Ann Arbor" }
 
 [media_player]
 max_title_length = 50
