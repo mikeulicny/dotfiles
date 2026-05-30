@@ -16,7 +16,7 @@ end)
 
 -- Environment Variables
 hl.env("XCURSOR_SIZE", "24")
-hl.env("hyprcursor_size", "24")
+hl.env("HYPRCURSOR_SIZE", "24")
 
 -- Look and Feel
 hl.config({
@@ -25,7 +25,7 @@ hl.config({
         gaps_out    = 10,
         border_size = 2,
         col = {
-            active_border   = "rgba(ffffff44)",
+            active_border   = "rgba(ffffff55)",
             inactive_border = "rgba(ffffff26)",
         },
         resize_on_border = false,
@@ -35,7 +35,7 @@ hl.config({
     },
 
     decoration = {
-        rounding       = 10,
+        rounding       = 12,
         rounding_power = 2,
 
         active_opacity   = 1.0,
@@ -50,12 +50,16 @@ hl.config({
 
         blur = {
             enabled = true,
-            size    = 2,
-            passes  = 2,
+            size    = 10,
+            passes  = 3,
             vibrancy = 0.1696,
+            new_optimizations = true,
+            xray = true,
         },
     },
 })
+
+hl.curve( "apple", { type = "bezier", points = { {0.42, 0.0}, {0.58, 1.0} } })
 
 hl.animation({
     leaf = "global",
@@ -64,7 +68,6 @@ hl.animation({
     bezier = "apple",
 })
 
-hl.curve( "apple", { type = "bezier", points = { {0.42, 0.0}, {0.58, 1.0} } })
 
 hl.config({
     master = {
