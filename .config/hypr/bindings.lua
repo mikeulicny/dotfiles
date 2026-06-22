@@ -1,5 +1,5 @@
 local launcher = "vicinae toggle"
-local terminal = "ghostty"
+local terminal = "ghostty +new-window"
 local browser  = "brave --new-window"
 
 hl.bind("SUPER + RETURN", hl.dsp.exec_cmd(terminal))
