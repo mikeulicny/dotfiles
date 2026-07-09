@@ -87,3 +87,6 @@ autoload -Uz compinit && compinit -C
 # This section can be safely removed at any time if needed.
 [[ ! -r '/home/mike/.opam/opam-init/init.zsh' ]] || source '/home/mike/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
+
+# UV shell autocompletion
+eval "$(uv --generate-shell-completion zsh)"
