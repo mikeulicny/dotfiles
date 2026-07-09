@@ -22,12 +22,14 @@ hl.window_rule({
     name = "files-float",
     match = { class = "org.gnome.Nautilus" },
     float = true,
-    center = true
+    center = true,
+    size = {"monitor_w * 0.5", "monitor_h * 0.5"}
 })
 
 hl.window_rule({
     name = "float-file-pickers",
     match = { title = "Open.*Files?|Save.*Files?|Open.*Folders?|All Files|Save" },
     float = true,
-    center = true
+    center = true,
+    size = {"monitor_w * 0.5", "monitor_h * 0.5"}
 })
