@@ -63,6 +63,7 @@ vim.pack.add({
     { src = "https://github.com/webhooked/oscura.nvim" },
     { src = "https://github.com/catppuccin/nvim" },
     { src = "https://github.com/datsfilipe/vesper.nvim" },
+    { src = "https://github.com/EdenEast/nightfox.nvim" },
     -- Utils
     { src = "https://github.com/stevearc/oil.nvim" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
@@ -118,4 +119,4 @@ require "vesper".setup({
     }
 })
 require "bufferline".setup({ highlights = require("vesper").bufferline.highlights })
-vim.cmd.colorscheme "oscura"
+vim.cmd.colorscheme "terafox"
