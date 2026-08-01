@@ -118,5 +118,5 @@ require "vesper".setup({
         variables = false,
     }
 })
-require "bufferline".setup({ highlights = require("vesper").bufferline.highlights })
+require "bufferline".setup()
 vim.cmd.colorscheme "terafox"

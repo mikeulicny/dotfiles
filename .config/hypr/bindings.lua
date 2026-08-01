@@ -3,7 +3,7 @@ local terminal = "ghostty +new-window"
 local browser  = "brave --new-window"
 
 hl.bind("SUPER + RETURN", hl.dsp.exec_cmd(terminal))
-hl.bind("SUPER + C", hl.dsp.window.close())
+hl.bind("SUPER + Q", hl.dsp.window.close())
 hl.bind("SUPER + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind("SUPER + F", hl.dsp.exec_cmd("nautilus --new-window"))
 hl.bind("SUPER + V", hl.dsp.window.float({ action = "toggle" }))

@@ -22,6 +22,3 @@ lock_cmd = "hyprlock &"
 scale_factor = 1.4 
 style = "Solid"
 opacity = 0.8
-
-[appearance.menu]
-opacity = 0.8
