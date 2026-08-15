@@ -1,12 +1,15 @@
 import Quickshell
 
 Scope {
+  id: barScope
+  readonly property int barHeight: 36
 
   Variants {
     model: Quickshell.screens;
 
     PanelWindow {
       required property var modelData
+
       screen: modelData
 
       anchors {
@@ -15,7 +18,7 @@ Scope {
         right: true
       }
 
-      implicitHeight: 36
+      implicitHeight: barScope.barHeight
       color: "#AA0B0B0F"
 
       SystemLogo {
@@ -26,6 +29,7 @@ Scope {
       }
 
       Workspaces {
+        bar: barScope
         anchors.left: logo.right
         anchors.leftMargin: 10
         anchors.verticalCenter: parent.verticalCenter
