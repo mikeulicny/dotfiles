@@ -15,13 +15,13 @@ Scope {
         right: true
       }
 
-      implicitHeight: 40
+      implicitHeight: 36
       color: "#AA0B0B0F"
 
       SystemLogo {
         id: logo
         anchors.left: parent.left
-        anchors.leftMargin: 15
+        anchors.leftMargin: 20
         anchors.verticalCenter: parent.verticalCenter
       }
 
@@ -35,9 +35,6 @@ Scope {
         anchors.centerIn: parent
       }
 
-      ControlCenter {
-        anchors.right: parent.right
-      }
     }
   }
 }
