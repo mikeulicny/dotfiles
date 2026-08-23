@@ -1,3 +1,5 @@
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import Quickshell.Hyprland
@@ -49,9 +51,13 @@ BarWidget {
 
         background: focused ? "#20FFFFFF" : "transparent"
         z: focused ? 1 : 0
-        implicitWidth: 40
-        text: (modelData === 10 ? "0" : modelData)
         onPressed: workspace.activate()
+
+        Text {
+          text: modelData
+          color: occupied ? "#FFFFFF" : "#40FFFFFF"
+          font.pointSize: 12
+        }
       }
       // Rectangle {
       //   required property int modelData

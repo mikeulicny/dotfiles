@@ -32,13 +32,25 @@ Scope {
         bar: barScope
         anchors.left: logo.right
         anchors.leftMargin: 10
-        anchors.verticalCenter: parent.verticalCenter
       }
 
       Clock {
+        bar: barScope
         anchors.centerIn: parent
       }
 
+      Media {
+        bar: barScope
+        anchors.right: controls.left
+        anchors.rightMargin: 10
+      }
+
+      ControlCenter {
+        id: controls
+        bar: barScope
+        anchors.right: parent.right
+        anchors.rightMargin: 10
+      }
     }
   }
 }
