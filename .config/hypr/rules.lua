@@ -11,6 +11,13 @@ hl.layer_rule({
     no_anim = true
 })
 
+hl.layer_rule({
+    name = "quickshell-blur",
+    match = { namespace = "quickshell" },
+    blur = true,
+    ignore_alpha = 0
+})
+
 hl.window_rule({
     name = "1Password-float",
     match = { class = "1Password" },
