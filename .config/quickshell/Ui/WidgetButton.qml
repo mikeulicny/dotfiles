@@ -14,7 +14,7 @@ Rectangle {
   implicitHeight: bar.barHeight - 10
   implicitWidth: content.implicitWidth + 30
   radius: 6
-  color: mouseArea.containsMouse ? "#20FFFFFF" : background
+  color: mouseArea.containsMouse ? "#33FFFFFF" : background
 
   Row {
     id: content

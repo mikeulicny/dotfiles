@@ -24,7 +24,7 @@ WidgetButton {
   }
 
   Icon {
-    size: 16
+    size: 20
     name: root.volumeIcon()
   }
 }

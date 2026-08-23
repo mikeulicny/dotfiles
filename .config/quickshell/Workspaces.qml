@@ -41,6 +41,7 @@ BarWidget {
       model: root.workspaceIds()
 
       WidgetButton {
+        id: button
         bar: root.bar
 
         required property int modelData
@@ -49,42 +50,15 @@ BarWidget {
         readonly property bool occupied: workspace !== null && workspace.toplevels.values.length > 0
         readonly property bool focused: Hyprland.focusedWorkspace !== null && Hyprland.focusedWorkspace.id === modelData
 
-        background: focused ? "#20FFFFFF" : "transparent"
         z: focused ? 1 : 0
         onPressed: workspace.activate()
 
         Text {
-          text: modelData
-          color: occupied ? "#FFFFFF" : "#40FFFFFF"
+          text: button.modelData
+          color: button.focused ? "#F59E0B" : button.occupied ? "#FFFFFF" : "#40FFFFFF"
           font.pointSize: 12
         }
       }
-      // Rectangle {
-      //   required property int modelData
-
-      //   readonly property var workspace: root.workspaceById(modelData)
-      //   readonly property bool occupied: workspace !== null && workspace.toplevels.values.length > 0
-      //   readonly property bool focused: Hyprland.focusedWorkspace !== null && Hyprland.focusedWorkspace.id === modelData
-
-      //   implicitWidth: 40
-      //   implicitHeight: root.bar.barHeight - 10
-      //   anchors.verticalCenter: parent.verticalCenter
-
-      //   color: focused ? "#20FFFFFF" : "transparent"
-      //   radius: 6
-
-      //   Text {
-      //     anchors.centerIn: parent
-      //     text: (parent.modelData === 10 ? "0" : parent.modelData)
-      //     color: "#FFFFFF"
-      //     font.pointSize: 12
-      //   }
-
-      //   MouseArea {
-      //     anchors.fill: parent
-      //     onClicked: parent.workspace.activate()
-      //   }
-      // }
     }
   }
 }

@@ -17,6 +17,10 @@ BarWidget {
       bar: root.bar
     }
 
+    Capture {
+      bar: root.bar
+    }
+
     Audio {
       bar: root.bar
     }
