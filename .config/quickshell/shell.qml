@@ -1,7 +1,13 @@
 import Quickshell
 import Quickshell.Io // for Process
 import QtQuick
+import qs.Modules
 
 Scope {
-  Bar {}
+  Bar {
+    id: bar
+  }
+  Notifications {
+    barHeight: bar.barHeight
+  }
 }

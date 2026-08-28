@@ -1,4 +1,6 @@
 import Quickshell
+import QtQuick.Layouts
+import qs.Modules
 
 Scope {
   id: barScope
@@ -19,7 +21,7 @@ Scope {
       }
 
       implicitHeight: barScope.barHeight
-      color: "#AA0B0B0F"
+      color: Styles.barBackground
 
       SystemLogo {
         id: logo
@@ -35,21 +37,33 @@ Scope {
       }
 
       Clock {
+        id: clock
         bar: barScope
         anchors.centerIn: parent
       }
 
       Media {
         bar: barScope
-        anchors.right: controls.left
+        anchors.right: controlModules.left
         anchors.rightMargin: 10
       }
 
-      ControlCenter {
-        id: controls
-        bar: barScope
+      RowLayout {
+        id: controlModules
+
         anchors.right: parent.right
         anchors.rightMargin: 10
+        spacing: -5
+        implicitHeight: barScope.barHeight
+        anchors.verticalCenter: parent.verticalCenter
+
+        System { bar: barScope }
+        Capture {}
+        Audio { bar: barScope }
+        Bluetooth { bar: barScope }
+        Network { bar: barScope }
+        Battery { bar: barScope }
+
       }
     }
   }

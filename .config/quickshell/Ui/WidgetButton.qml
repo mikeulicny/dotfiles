@@ -1,11 +1,14 @@
 import QtQuick
+import qs
 
 Rectangle {
   id: root
 
   property var bar: null
-  property color background: "transparent"
+  property var popup: null
+  property color background: Styles.transparent
   property bool active: false
+  property bool checkable: popup !== null
 
   default property alias content: content.data
 
@@ -13,8 +16,22 @@ Rectangle {
 
   implicitHeight: bar.barHeight - 10
   implicitWidth: content.implicitWidth + 30
-  radius: 6
-  color: mouseArea.containsMouse ? "#33FFFFFF" : background
+  radius: Styles.radius
+  color: root.active || mouseArea.containsMouse ? Styles.fill : root.background
+
+  function toggleActive() {
+    if (root.popup && typeof root.popup.toggle === "function")
+      root.popup.toggle()
+    else if (root.checkable)
+      root.active = !root.active
+  }
+
+  Connections {
+    target: root.popup
+    function onVisibleChanged() {
+      root.active = !!root.popup.visible
+    }
+  }
 
   Row {
     id: content
@@ -33,6 +50,10 @@ Rectangle {
     anchors.fill: parent
     acceptedButtons: Qt.LeftButton | Qt.RightButton | Qt.MiddleButton
     hoverEnabled: true
-    onClicked: function(mouse) { root.pressed(mouse.button) }
+    onClicked: function(mouse) {
+      if (mouse.button === Qt.LeftButton && root.checkable)
+        root.toggleActive()
+      root.pressed(mouse.button)
+    }
   }
 }

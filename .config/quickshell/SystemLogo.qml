@@ -11,7 +11,7 @@ IconImage {
   width: 20
   height: 20
 
-  property color color: "#E6E6E6"
+  property color color: Styles.foreground
 
   smooth: true
   asynchronous: true

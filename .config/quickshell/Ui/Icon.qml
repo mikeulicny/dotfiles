@@ -3,12 +3,13 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Effects
 import Quickshell.Widgets
+import qs
 
 Item {
   id: root
 
   property string name
-  property color color: "#20FFFFFF"
+  property color color: Styles.foreground
   property real size: 24
 
   implicitWidth: size

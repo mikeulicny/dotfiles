@@ -1,9 +1,9 @@
 import QtQuick
 import Quickshell.Io
 import Quickshell.Services.Pipewire
-import "Ui"
+import qs.Ui
 
-WidgetButton {
+Item {
   id: root
 
   property bool v4lInUse: false
@@ -87,14 +87,14 @@ WidgetButton {
   Icon {
     visible: root.cameraActive
     size: 16
-    color: root.cameraMuted ? "#20FFFFFF" : "#FB923C"
+    color: root.cameraMuted ? Styles.muted : Styles.urgent
     name: root.cameraMuted ? "video-off.svg" : "video.svg"
   }
 
   Icon {
     visible: root.micActive
     size: 16
-    color: root.micMuted ? "#20FFFFFF" : "#FB923C"
+    color: root.micMuted ? Styles.muted : Styles.urgent
     name: root.micMuted ? "mic-off.svg" : "mic.svg"
   }
 }
