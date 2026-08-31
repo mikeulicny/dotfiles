@@ -8,8 +8,7 @@ hl.monitor({
 
 -- Autostart
 hl.on("hyprland.start", function()
-    hl.exec_cmd("ashell")
-    hl.exec_cmd("mako")
+    hl.exec_cmd("quickshell")
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("vicinae server")
 end)
