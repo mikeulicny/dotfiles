@@ -53,6 +53,8 @@ Item {
   readonly property bool micMuted: source && source.audio ? source.audio.muted : false
 
   visible: cameraActive || micActive
+  implicitWidth: icons.implicitWidth
+  implicitHeight: icons.implicitHeight
 
   PwObjectTracker {
     objects: [root.camera, Pipewire.defaultAudioSource]
@@ -84,17 +86,22 @@ Item {
     onTriggered: cameraCheck.running = true
   }
 
-  Icon {
-    visible: root.cameraActive
-    size: 16
-    color: root.cameraMuted ? Styles.muted : Styles.urgent
-    name: root.cameraMuted ? "video-off.svg" : "video.svg"
-  }
+  Row {
+    id: icons
+    spacing: 6
 
-  Icon {
-    visible: root.micActive
-    size: 16
-    color: root.micMuted ? Styles.muted : Styles.urgent
-    name: root.micMuted ? "mic-off.svg" : "mic.svg"
+    Icon {
+      visible: root.cameraActive
+      size: 16
+      color: root.cameraMuted ? Styles.muted : Styles.urgent
+      name: root.cameraMuted ? "video-off.svg" : "video.svg"
+    }
+
+    Icon {
+      visible: root.micActive
+      size: 16
+      color: root.micMuted ? Styles.muted : Styles.urgent
+      name: root.micMuted ? "mic-off.svg" : "mic.svg"
+    }
   }
 }

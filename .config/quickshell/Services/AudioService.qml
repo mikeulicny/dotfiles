@@ -10,11 +10,36 @@ Singleton {
 
   readonly property PwNode sink: Pipewire.defaultAudioSink
   readonly property PwNode source: Pipewire.defaultAudioSource
+  readonly property bool muted: sink && sink.audio ? sink.audio.muted : false
+  readonly property real volume: sink && sink.audio ? sink.audio.volume : 0
 
-  signal volumeChanged()
 
   PwObjectTracker {
     objects: [Pipewire.defaultAudioSink, Pipewire.defaultAudioSource]
+  }
+
+  Connections {
+    target: root.sink?.audio
+
+    function onVolumeChanged() {
+      root.volumeChanged()
+    }
+
+    function onMutedChanged() {
+      root.volumeChanged()
+    }
+  }
+
+  function volumeIcon() {
+    if (root.muted)
+      return "volume-off.svg"
+    if (root.volume > 0.5)
+      return "volume-2.svg"
+    if (root.volume > 0.25)
+      return "volume-1.svg"
+    if (root.volume > 0.01)
+      return "volume.svg"
+    return "volume-x.svg"
   }
 
   function setVolume(percent) {

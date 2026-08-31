@@ -10,4 +10,5 @@ Scope {
   Notifications {
     barHeight: bar.barHeight
   }
+  VolumeOsd {}
 }

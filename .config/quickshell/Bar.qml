@@ -42,6 +42,13 @@ Scope {
         anchors.centerIn: parent
       }
 
+      Capture {
+        id: capture
+        anchors.left: clock.right
+        anchors.leftMargin: 10
+        anchors.verticalCenter: parent.verticalCenter
+      }
+
       Media {
         bar: barScope
         anchors.right: controlModules.left
@@ -58,7 +65,6 @@ Scope {
         anchors.verticalCenter: parent.verticalCenter
 
         System { bar: barScope }
-        Capture {}
         Audio { bar: barScope }
         Bluetooth { bar: barScope }
         Network { bar: barScope }
