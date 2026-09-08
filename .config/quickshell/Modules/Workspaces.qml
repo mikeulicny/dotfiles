@@ -52,11 +52,12 @@ BarWidget {
         readonly property bool focused: Hyprland.focusedWorkspace !== null && Hyprland.focusedWorkspace.id === modelData
 
         z: focused ? 1 : 0
+        background: button.focused ? Styles.muted : "transparent"
         onPressed: workspace.activate()
 
         Text {
           text: button.modelData
-          color: button.focused ? Styles.accent : button.occupied ? Styles.foreground : Styles.muted
+          color: button.occupied ? Styles.foreground : Styles.muted
           font.pointSize: Styles.font.md
         }
       }

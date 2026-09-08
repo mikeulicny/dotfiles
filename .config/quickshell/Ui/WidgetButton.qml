@@ -17,7 +17,7 @@ Rectangle {
   implicitHeight: bar.barHeight - 10
   implicitWidth: content.implicitWidth + 30
   radius: Styles.radius
-  color: root.active || mouseArea.containsMouse ? Styles.fill : root.background
+  color: root.active ? Styles.fill : root.background
 
   function toggleActive() {
     if (root.popup && typeof root.popup.toggle === "function")
