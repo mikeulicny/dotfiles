@@ -19,17 +19,10 @@ Rectangle {
   radius: Styles.radius
   color: root.active ? Styles.fill : root.background
 
-  function toggleActive() {
-    if (root.popup && typeof root.popup.toggle === "function")
-      root.popup.toggle()
-    else if (root.checkable)
-      root.active = !root.active
-  }
-
   Connections {
     target: root.popup
     function onVisibleChanged() {
-      root.active = !!root.popup.visible
+      root.active = root.popup.visible
     }
   }
 
@@ -52,7 +45,7 @@ Rectangle {
     hoverEnabled: true
     onClicked: function(mouse) {
       if (mouse.button === Qt.LeftButton && root.checkable)
-        root.toggleActive()
+        root.popup.toggle()
       root.pressed(mouse.button)
     }
   }
