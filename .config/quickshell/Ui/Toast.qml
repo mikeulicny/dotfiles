@@ -1,6 +1,7 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
+import QtQuick.Controls
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Widgets
@@ -78,10 +79,20 @@ WrapperRectangle {
       }
     }
 
-    PanelButton {
+    AbstractButton {
       Layout.alignment: Qt.AlignTop
+      hoverEnabled: true
+      padding: 4
+      implicitWidth: 28
+      implicitHeight: 28
       onClicked: root.notification?.dismiss()
-      Icon {
+
+      background: Rectangle {
+        radius: Styles.radius
+        color: parent.hovered ? Styles.fill : Styles.transparent
+      }
+
+      contentItem: Icon {
         size: 16
         name: "x.svg"
       }

@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Controls
 import QtQuick.Layouts
 import Quickshell.Bluetooth
 import qs
@@ -59,10 +60,23 @@ Item {
           Layout.fillWidth: true
         }
 
-        PanelButton {
+        AbstractButton {
           enabled: BluetoothService.enabled
+          hoverEnabled: true
+          padding: 4
+          implicitWidth: 28
+          implicitHeight: 28
           onClicked: BluetoothService.refresh()
-          Icon { size: 16; name: "rotate-cw.svg" }
+
+          background: Rectangle {
+            radius: Styles.radius
+            color: parent.hovered && parent.enabled ? Styles.fill : Styles.transparent
+          }
+
+          contentItem: Icon {
+            size: 16
+            name: "rotate-cw.svg"
+          }
         }
       }
 
@@ -149,7 +163,7 @@ Item {
                   return "Connected"
                 return "Remembered"
               }
-              color: Styles.secondary
+              color: modelData.connected ? Styles.success : Styles.secondary
               font.pointSize: Styles.font.sm
             }
           }
